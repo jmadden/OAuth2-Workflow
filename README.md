@@ -1,3 +1,3 @@
 # Outline of logic
 
-1. Save the access token generated at this endpoint (https://help.sigmacomputing.com/reference/token) to local storage.
+### SaveAccessToken.js - This code works at the /token API endpoint.
