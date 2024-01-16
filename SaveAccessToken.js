@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
             tryItButton.addEventListener('click', function (event) {
               event.preventDefault();
               // Check if the current URL ends with '/token'
-              if (window.location.pathname.endsWith('/token-1')) {
+              if (window.location.pathname.endsWith('/token')) {
                 // Execute the additional logic after a delay on the /token page
                 additionalLogicAfterDelay();
               }
