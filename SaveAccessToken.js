@@ -30,10 +30,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Function to save the access_token value into local storage
       function saveAccessTokenToLocalStorage(accessToken) {
+        // Check if the string starts and ends with double quotes
+        let token;
+        if (accessToken.startsWith('"') && accessToken.endsWith('"')) {
+          // Remove double quotes using slice
+          token = accessToken.slice(1, -1);
+          console.log(token);
+        } else {
+          // Do something else if the string doesn't have quotes at both ends
+          console.log('String does not have quotes at both ends.');
+        }
         if (accessToken) {
           const storedAccessToken = localStorage.getItem('access_token');
           if (!storedAccessToken || storedAccessToken !== accessToken) {
-            localStorage.setItem('access_token', accessToken);
+            localStorage.setItem('access_token', token);
             console.log('Access token saved in local storage:');
           }
         }
@@ -74,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
             tryItButton.addEventListener('click', function (event) {
               event.preventDefault();
               // Check if the current URL ends with '/token'
-              if (window.location.pathname.endsWith('/token')) {
+              if (window.location.pathname.endsWith('/token-1')) {
                 // Execute the additional logic after a delay on the /token page
                 additionalLogicAfterDelay();
               }
