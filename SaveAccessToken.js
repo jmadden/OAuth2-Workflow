@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const accessToken = extractAccessToken();
       // Save access_token into local storage
       saveAccessTokenToLocalStorage(accessToken);
-    }, 2000); // Wait for 2 seconds (2000 milliseconds)
+    }, 1000);
   }
 
   // Function to add event listener to the "Try It" button
