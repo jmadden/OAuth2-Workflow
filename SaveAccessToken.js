@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Function to handle the additional logic after a delay
-  function waitForResponse() {
+  const waitForResponse = () => {
     setTimeout(function () {
       // Your additional logic after a delay of 2 seconds goes here
 
@@ -28,24 +28,24 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       // Function to save the access_token value into local storage
-      function saveAccessTokenToLocalStorage(accessToken) {
+      const saveAccessTokenToLocalStorage = accessToken => {
         if (accessToken) {
           const storedAccessToken = localStorage.getItem('access_token');
           if (!storedAccessToken || storedAccessToken !== accessToken) {
             localStorage.setItem('access_token', accessToken);
           }
         }
-      }
+      };
 
       // Retrieve access_token value from the HTML structure
       const accessToken = extractAccessToken();
       // Save access_token into local storage
       saveAccessTokenToLocalStorage(accessToken);
     }, 1000);
-  }
+  };
 
   // Function to add event listener to the "Try It" button
-  function addTryItButtonClickEvent() {
+  const addTryItButtonClickEvent = () => {
     setTimeout(function () {
       // Find the div elements containing the class attribute containing 'rm-PlaygroundRequest'
       const divsWithClass = document.querySelectorAll(
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
     }, 1000);
-  }
+  };
 
   // Function to monitor URL changes using window.onpopstate
   window.onpopstate = function () {
