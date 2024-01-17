@@ -17,6 +17,6 @@ This code retrieves the access token from local storage and uses it for subseque
 
 - Waits for page elements to load.
 - Add the access token from local storage into OAuth2 Bearer token part of the page.
-- Adding this should update the request generate with the access token. - **CURRENTLY BROKEN**
+- Adding this should update the request generate with the access token.
 
 Example endpoing: https://jim-group-sandbox.readme.io/reference/listconnectionpaths
