@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
       let storedToken = localStorage.getItem('access_token');
 
       if (!storedToken) {
-        console.log('Access token does not exist in local storage.');
         return; // Stop the code execution if access_token does not exist
       }
 
@@ -26,15 +25,9 @@ document.addEventListener('DOMContentLoaded', function () {
         // Dispatch 'input' event to mimic the user input
         const event = new Event('input', { bubbles: true, cancelable: true });
         inputField.dispatchEvent(event);
-
-        console.log('Input field updated with local storage access token');
         isUpdated = true;
       } else if (!isUpdated) {
         inputField.dispatchEvent(event);
-
-        console.log(
-          'Input field value is the same as the local storage value.'
-        );
       }
     }, 1000);
   };
@@ -50,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Call the function on initial load with a delay, but not on "/token" pages
-  if (!window.location.href.endsWith('/token-1')) {
+  if (!window.location.href.endsWith('/token')) {
     updateBearerToken();
     window.onpopstate = updateBearerToken;
   }
